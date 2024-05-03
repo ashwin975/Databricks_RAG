@@ -3,6 +3,12 @@
 ## 🎉 Inspiration
 We were struck by the lightning bolt ⚡ of inspiration when we discovered the incredible potential of Retrieval-Augmented Generation (RAG) and the mind-blowing scalability of Databricks. We thought, why not combine these two superpowers to create a RAG-based LLM model that can swoop in like a superhero 🦸‍♂️ and save the day for Husky's field service engineers? 
 
+Company Website - [Husky Webpage](https://www.husky.co/en/)
+
+About the Company - Husky Technologies specializes in [Injection Molding](https://en.wikipedia.org/wiki/Injection_moulding) systems and excels in providing top products and services for industries like consumer goods, medical, beverages, and automotive. They focus on delivering high-performance, efficient solutions globally, with extensive support including installation, training, and maintenance. Their commitment to innovation helps enhance productivity and profitability while fostering strong customer relationships.
+
+Problem Statement - To enhance productivity for Husky Technologies' field service agents, implementing a Large Language Model (LLM) or a context-aware Q&A bot could be transformative. This technology would allow agents to quickly navigate complex documentation necessary for diagnosing equipment issues, significantly speeding up the process. The main challenge is integrating Husky's proprietary documents and internal knowledge into the LLM to ensure it can effectively retrieve and interpret specific information.
+
 ## 🤖 What it does
 Our RAG-based LLM model is like a genius librarian 📚 that lives inside Databricks. It has memorized Husky's entire collection of technical documents and can provide spot-on answers to any question thrown its way. It's like having a pocket-sized expert 🧠 that engineers can consult anytime, anywhere!
 
