@@ -5,56 +5,64 @@ We were struck by the lightning bolt ⚡ of inspiration when we discovered the i
 
 Company Website - [Husky Webpage](https://www.husky.co/en/)
 
-About the Company - Husky Technologies specializes in [Injection Molding](https://en.wikipedia.org/wiki/Injection_moulding) systems and excels in providing top products and services for industries like consumer goods, medical, beverages, and automotive. They focus on delivering high-performance, efficient solutions globally, with extensive support including installation, training, and maintenance. Their commitment to innovation helps enhance productivity and profitability while fostering strong customer relationships.
+About the Company - Husky Technologies specializes in [Injection Molding](https://en.wikipedia.org/wiki/Injection_moulding) systems and excels in providing top products and services for industries like consumer goods, medical, beverages, and automotive. They focus on delivering high-performance, efficient solutions globally, with extensive support including installation, training, and maintenance.
 
 Problem Statement - To enhance productivity for Husky Technologies' field service agents, implementing a Large Language Model (LLM) or a context-aware Q&A bot could be transformative. This technology would allow agents to quickly navigate complex documentation necessary for diagnosing equipment issues, significantly speeding up the process. The main challenge is integrating Husky's large knowledge database and internal knowledge into the LLM to ensure it can effectively retrieve and interpret specific information.
 
 ## 🤖 What it does
-Our RAG-based LLM model is like a genius librarian 📚 that lives inside Databricks. It has memorized Husky's entire collection of technical documents and can provide spot-on answers to any question thrown its way. It's like having a pocket-sized expert 🧠 that engineers can consult anytime, anywhere!
+Our RAG-based LLM model is like a genius librarian 📚 that lives inside Databricks. It has memorized Husky's entire collection of technical documents, User manuals, Service manuals and can provide spot-on answers to any question thrown its way. It's like having a pocket-sized expert 🧠 that engineers can consult anytime, anywhere!
+
+## 🧅 How we built it
+- Resources were created on Azure cloud including Resource groups, Databricks workspace, Unity Access Connector, Data lake storage (Metastore storage), Azure Key Vault Access (Secret Storage), cluster configurations were setup initially
+- Connections and access management between Azure storage container and databricks workspace were established
+
+1. Ingested the Pdfs as into Unity Catalog volume store as raw data
+2. Split the pdfs in small chunks of text
+3. Computed the embeddings using a Databricks Foundation model - (bge-large-en) as part of our Delta Live Tables
+4. Created a Vector Search index based on our Delta live Table
+5. Trained the model with input and output examples
+6. Registered the fine tuned LLM model
+7. Endpoint created and Served using ML-flow endpoint creation
+8. Established a space on hugging face for Chatbot User Interface
 
 ## 🏛️ Architecture:
 
 ![alt text](https://github.com/ashwin975/Databricks_RAG/blob/main/Databricks_RAG.svg)
 
-## 🛠️ How we built it
-We donned our hard hats 👷‍♂️ and got to work, armed with Python and Databricks as our trusty tools. We used Elasticsearch as our retrieval sidekick 🔍, helping us find the most relevant passages in a flash. For the generative language model, we enlisted the help of the Hugging Face Transformers 🤗, training it to speak Husky's language. Databricks' distributed computing was the secret sauce 🌶️ that made everything run smoothly and efficiently.
+## 🍽️ Dataset Used:
+
+Documents used for RAG memory:
+
+[Hot Runner Product Handbook](https://www.husky.co/globalassets/hotrunnerproducthandbook_19_4-external.pdf) [238pgs]
+
+[Ultrasync Service Manual](https://www.husky.co/siteassets/documents/hr_ultrasynch_v2-2_eng_202103_5007549.pdf) [78pgs]
+
+[Ultrashot Service Manual](https://www.husky.co/siteassets/userfileupload/hr_ultrashot_v1-1_eng.pdf) [186pgs]
+
+[Training Course Doc](https://www.husky.co/contentassets/599f2271c8ed41a0afaaefc50d025f23/training-course-overview-2024.pdf) [20pgs]
 
 ## 😅 Challenges we ran into
-Ensuring that the model's responses made sense and stayed on topic was like herding cats 🐱. Husky's documents are complex, and getting the retrieval process and model architecture just right took more trial and error than a mad scientist's lab 🧪. But we persevered, fueled by coffee ☕ and determination!
+Ensuring that the model's responses made sense and stayed on topic was like herding cats 🐱. Husky's documents are complex, and getting the retrieval process and model architecture just right took more trial and error than a mad scientist's lab 🧪. But we persevered, fueled by coffee ☕ and determination! And also obviously limited Budget 💸
 
-## 🎉 Accomplishments that we're proud of
-We did it! We successfully combined the retrieval and generative components into a unified RAG model that provides accurate, context-specific answers. It's like we created a mind-reading machine 🔮 that can tap into Husky's collective knowledge and deliver coherent responses. We couldn't be prouder of our brainchild! 👶
+## 🚀 What's next for our RAG-based LLM on Databricks
+The sky's the limit! 🌟 
+
+- ✅ We plan to keep expanding the knowledge base, like a sponge soaking up water 🧽.
+- ✅ Incorporating user feedback from industry experts and field service engineers/SMEs.
+- ✅ Integration with existing enterprise systems and support for multiple languages?🌍! 
+- ✅ As a future scope, we plan to web scrape wikipedia pages, research papers, ebooks
+
+The future is bright, and we can't wait to see where this journey takes us! 🎈
 
 ## 🧠 What we learned
 We learned that combining retrieval and generation techniques is like mixing peanut butter and jelly 🥪 - they're just meant to be together! We also discovered the importance of fine-tuning the retrieval process and optimizing the model architecture, like a chef perfecting a secret recipe 👨‍🍳. Databricks was our trusty sous-chef 👨‍🍳, handling the heavy lifting of data processing and model training.
 
-## 🚀 What's next for RAG-based LLM on Databricks
-The sky's the limit! 🌟 We plan to keep expanding the knowledge base, like a sponge soaking up water 🧽. We're also exploring ways to make the model handle multi-modal data, like a Swiss Army knife 🔧. Incorporating user feedback will be like having a built-in focus group 👥, helping us continuously improve. Integration with existing enterprise systems and support for multiple languages? That's like taking our model on a world tour 🌍! The future is bright, and we can't wait to see where this journey takes us! 🎈
-
-## 🧅 Process Overview:
-- Storage account, Databricks workspace, Databricks access connector, Resource group, Databricks metastore, cluster configurations were setup initially
-- Connections and access management between Azure storage container and databricks workspace were established
-- Ingestion and Transformations notebooks were created using SQL
-- Workflow was orchestrated to run the notebooks sequentially
-
-Key Benefits of Using Unity Catalog: 
-- ✅ Build Efficient data flow layers ( raw -> processed -> presentation)
-- ✅ Monitoring and Managing Pipelines with Azure Monitor service
-- ✅ Setup up (CI/CD) pipelines to facilitate testing, deployment, and production phases
-- ✅ Build Delta Lake in Azure databricks for ACID transactions
-- ✅ Created External and Managed tables using Spark (PySpark and Spark SQL)
-- ✅ Securely stored the secrets/credentials using Azure Key Vault
-- ✅ Transformed the data using Azure Databricks for reporting and analysis
-- ✅ Analyzed the data using Databricks and created Dashboards using Power BI
-1. Data Discoverability: Data explorer provides a simple search through for any objects in catalog (with UI and SQL queries)
-2. Data Audit: Audit logs/information can be viewed (when diagnostic settings are enabled)
-3. Data Lineage: workflow, downstream and upstream datamovements can be viewed. With this we can perform root cause analysis, impact analysis and better manage data requiring regulatory compliance  
-4. Data Access Control: Metastore access can be modified as required or as per user level (GRANT and REVOKE statements - SQL, CLI, also using Data Explorer)
+## 🎉 Accomplishments that we're proud of
+We did it! We successfully combined the retrieval and generative components into a unified RAG model that provides accurate, context-specific answers. It's like we created a mind-reading machine 🔮 that can tap into Husky's collective knowledge and deliver coherent responses. We couldn't be prouder of our brainchild! 👶
 
 ## 🛠️ Tools Used:
  - Programming Language - SQL, PySpark, Python
  - Azure Cloud, Databricks
- - Azure Data lake Gen 2
+ - Azure Data lake Gen 2 for metastore
+ - Delta Live Tables for documents storage
 
-## 🍽️ Dataset Used:
-ERGAST API - Formula 1 Dataset - Drivers and Results JSON files
