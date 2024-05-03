@@ -13,7 +13,7 @@ The resulting Managed tables stored in Delta lake format represent the curated d
 
 ## 🏛️ Architecture:
 
-![alt text](https://github.com/ashwin975/Azure-Unity-Catalog-Project/blob/main/Azure%20Unity%20Catalog%20Project.png]](https://github.com/ashwin975/Databricks_RAG/blob/main/Databricks_RAG.svg)
+![alt text](https://github.com/ashwin975/Databricks_RAG/blob/main/Databricks_RAG.svg)
 
 ## 🧅 Process Overview:
 - Storage account, Databricks workspace, Databricks access connector, Resource group, Databricks metastore, cluster configurations were setup initially
