@@ -3,12 +3,12 @@
 ## 🎉 Inspiration
 We were struck by the lightning bolt ⚡ of inspiration when we discovered the incredible potential of Retrieval-Augmented Generation (RAG) and the mind-blowing scalability of Databricks. We thought, why not combine these two superpowers to create a RAG-based LLM model that can swoop in like a superhero 🦸‍♂️ and save the day for Husky's field service engineers? 
 
+## 🤖 What it does
+Our RAG-based LLM model is like a genius librarian 📚 that lives inside Databricks. It has memorized Husky's entire collection of technical documents and can provide spot-on answers to any question thrown its way. It's like having a pocket-sized expert 🧠 that engineers can consult anytime, anywhere!
+
 ## 🏛️ Architecture:
 
 ![alt text](https://github.com/ashwin975/Databricks_RAG/blob/main/Databricks_RAG.svg)
-
-## 🤖 What it does
-Our RAG-based LLM model is like a genius librarian 📚 that lives inside Databricks. It has memorized Husky's entire collection of technical documents and can provide spot-on answers to any question thrown its way. It's like having a pocket-sized expert 🧠 that engineers can consult anytime, anywhere!
 
 ## 🛠️ How we built it
 We donned our hard hats 👷‍♂️ and got to work, armed with Python and Databricks as our trusty tools. We used Elasticsearch as our retrieval sidekick 🔍, helping us find the most relevant passages in a flash. For the generative language model, we enlisted the help of the Hugging Face Transformers 🤗, training it to speak Husky's language. Databricks' distributed computing was the secret sauce 🌶️ that made everything run smoothly and efficiently.
