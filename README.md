@@ -1,4 +1,4 @@
-# Databricks_RAG
+![Databricks Badge](https://img.shields.io/badge/made%20with-Databricks-red)
 
 ## 🎉 Inspiration
 We were struck by the lightning bolt ⚡ of inspiration when we discovered the incredible potential of Retrieval-Augmented Generation (RAG) and the mind-blowing scalability of Databricks. We thought, why not combine these two superpowers to create a RAG-based LLM model that can swoop in like a superhero 🦸‍♂️ and save the day for Husky's field service engineers? 
@@ -32,6 +32,14 @@ The sky's the limit! 🌟 We plan to keep expanding the knowledge base, like a s
 - Workflow was orchestrated to run the notebooks sequentially
 
 Key Benefits of Using Unity Catalog: 
+- ✅ Build Efficient data flow layers ( raw -> processed -> presentation)
+- ✅ Monitoring and Managing Pipelines with Azure Monitor service
+- ✅ Setup up (CI/CD) pipelines to facilitate testing, deployment, and production phases
+- ✅ Build Delta Lake in Azure databricks for ACID transactions
+- ✅ Created External and Managed tables using Spark (PySpark and Spark SQL)
+- ✅ Securely stored the secrets/credentials using Azure Key Vault
+- ✅ Transformed the data using Azure Databricks for reporting and analysis
+- ✅ Analyzed the data using Databricks and created Dashboards using Power BI
 1. Data Discoverability: Data explorer provides a simple search through for any objects in catalog (with UI and SQL queries)
 2. Data Audit: Audit logs/information can be viewed (when diagnostic settings are enabled)
 3. Data Lineage: workflow, downstream and upstream datamovements can be viewed. With this we can perform root cause analysis, impact analysis and better manage data requiring regulatory compliance  
