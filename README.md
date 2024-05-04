@@ -66,4 +66,4 @@ We did it! We successfully combined the retrieval and generative components into
  - Azure Data lake Gen 2 for metastore
  - Delta Live Tables for documents storage
 
-Gradio App - https://ashwin975-mfg-injection-molding-husky.hf.space
+Gradio App - https://ashwin975-mfg-injection.space
